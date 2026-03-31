@@ -15,8 +15,11 @@ if use_digits == "yes":
 if use_symbols == "yes":
     characters += string.punctuation
 
-password = ""
-for _ in range(length):
-    password += random.choice(characters)
+if length <= 0:
+    print("Please enter a valid positive length")
+else:
+    password = ""
+    for i in range(length):
+        password += random.choice(characters)
 
-print("Generated Password:", password)
+    print("Generated Password:", password)
